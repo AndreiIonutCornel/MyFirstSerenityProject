@@ -1,5 +1,6 @@
 package com.fast.steps.serenity;
 
+import com.fast.Utils.Constants;
 import com.fast.pages.HomePage;
 import com.fast.pages.LoginPage;
 import com.fast.pages.MyAccountPage;
@@ -27,13 +28,8 @@ public class LoginSteps extends ScenarioSteps {
     }
 
     @Step
-    public void setUser(){
-        loginPage.setEmailField();
-    }
-
-    @Step
-    public void setPassword(){
-        loginPage.setPasswordField();
+    public void loghinWithTrueCredentials(){
+        loginPage.loghinWithTrueCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
     }
 
     @Step
@@ -50,8 +46,7 @@ public class LoginSteps extends ScenarioSteps {
     public void login(){
         navigateToHomepage();
         goToLogin();
-        setUser();
-        setPassword();
+
         clickOnLoginButton();
    //     checkLoggedIn();
     }

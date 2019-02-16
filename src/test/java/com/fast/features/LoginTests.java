@@ -21,8 +21,7 @@ public class LoginTests {
     public void validLoginTest(){
        loginSteps.navigateToHomepage();
        loginSteps.goToLogin();
-       loginSteps.setUser();
-       loginSteps.setPassword();
+       loginSteps.loghinWithTrueCredentials();
        loginSteps.clickOnLoginButton();
 //       loginSteps.checkLoggedIn();
     }

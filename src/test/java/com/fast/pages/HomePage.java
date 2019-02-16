@@ -7,13 +7,13 @@ import net.thucydides.core.pages.PageObject;
 
 import java.util.concurrent.TimeUnit;
 
-@DefaultUrl("https://fasttrackit.org/selenium-test/")
+@DefaultUrl("http://qa2.fasttrackit.org:8008/")
 public class HomePage extends PageObject {
 
-    @FindBy(css = "a.skip-account .label")
+    @FindBy(css = ".menu-item-64 a")
     private WebElementFacade myAccountButton;
 
-    @FindBy(css = "a[title='Log In']")
+    @FindBy(css = "#customer_login > div.u-column1.col-1 > form > p:nth-child(3) > button")
     private WebElementFacade logInLink;
 
     public void clickMyAccountButton(){

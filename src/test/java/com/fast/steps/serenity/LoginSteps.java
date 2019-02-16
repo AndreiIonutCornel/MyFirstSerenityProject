@@ -41,10 +41,10 @@ public class LoginSteps extends ScenarioSteps {
         loginPage.clickLoginButton();
     }
 
-    @Step
-    public void checkLoggedIn(){
-        Assert.assertTrue(myAccountPage.checkLoggedIn());
-    }
+  //  @Step
+  //  public void checkLoggedIn(){
+ //       Assert.assertTrue(myAccountPage.checkLoggedIn());
+   // }
 
     @StepGroup
     public void login(){
@@ -53,6 +53,6 @@ public class LoginSteps extends ScenarioSteps {
         setUser();
         setPassword();
         clickOnLoginButton();
-        checkLoggedIn();
+   //     checkLoggedIn();
     }
 }

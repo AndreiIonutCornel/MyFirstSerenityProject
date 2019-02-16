@@ -12,8 +12,8 @@ public class MyAccountPage extends PageObject {
     private WebElementFacade welcomeMessageStrong;
 
 
-    public boolean checkLoggedIn(){
-        waitFor(welcomeMessageStrong);
-        return welcomeMessageStrong.containsText("Hello spyroboss!");
-    }
+ //   public boolean checkLoggedIn(){
+//        waitFor(welcomeMessageStrong);
+//        return welcomeMessageStrong.containsText("Hello spyroboss!");
+ //   }
 }

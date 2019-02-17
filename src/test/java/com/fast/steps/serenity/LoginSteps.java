@@ -31,6 +31,16 @@ public class LoginSteps extends ScenarioSteps {
     public void loghinWithTrueCredentials() {
         loginPage.loghinWithTrueCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
     }
+    @Step
+    public void loginWithFalseCredentials(){
+        loginPage.loginWithFalseCredentials("blabla@gmail.com", "12345678");
+    }
+
+    @Step
+    public void checkLoginFailure() {
+            loginPage.checkLoginFailure ("ERROR: Invalid email address. Lost your password?");
+    }
+
 
     @Step
     public void clickOnLoginButton() {
@@ -49,5 +59,13 @@ public class LoginSteps extends ScenarioSteps {
         loghinWithTrueCredentials();
         clickOnLoginButton();
         checkLoggedIn();
+    }
+    @StepGroup
+    public void invalidLogin(){
+        navigateToHomepage();
+        goToLogin();
+        loginWithFalseCredentials();
+        clickOnLoginButton();
+        checkLoginFailure();
     }
 }

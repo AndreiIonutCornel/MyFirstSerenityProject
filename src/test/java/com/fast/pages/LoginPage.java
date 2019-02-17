@@ -17,6 +17,10 @@ public class LoginPage extends PageObject {
     @FindBy(css = "div  p:nth-child(3) button[value= 'Login']")
     private WebElementFacade loginButton;
 
+    @FindBy(css = "#post-7 > div > div > ul > li")
+    private WebElementFacade loginErrorMessage;
+
+
     public void loghinWithTrueCredentials(String email, String password) {
         typeInto(emailField, email);
         typeInto(passwordField, password);
@@ -25,5 +29,14 @@ public class LoginPage extends PageObject {
     public void clickLoginButton() {
         clickOn(loginButton);
     }
+    public void loginWithFalseCredentials(String email, String password){
+        typeInto(emailField, "blabla@gmail.com");
+        typeInto(passwordField, "12345678");
+    }
+    public boolean checkLoginFailure(String error){
+        waitFor (loginErrorMessage);
+        return loginErrorMessage.containsText(error);
+    }
+
 }
 

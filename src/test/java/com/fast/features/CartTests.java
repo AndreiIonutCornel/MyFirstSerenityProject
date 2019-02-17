@@ -22,6 +22,6 @@ public class CartTests {
 
     public void addToCart() {
         loginSteps.login();
-        cartSteps.
+
     }
 }

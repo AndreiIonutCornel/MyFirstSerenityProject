@@ -28,6 +28,11 @@ public class LoginTests {
 
     @Test
     public void invalidLoghinTest() {
+        loginSteps.navigateToHomepage();
+        loginSteps.goToLogin();
+        loginSteps.loginWithFalseCredentials();
+        loginSteps.clickOnLoginButton();
+        loginSteps.checkLoginFailure();
 
     }
 

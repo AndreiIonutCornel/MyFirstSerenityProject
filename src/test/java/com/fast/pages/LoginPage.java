@@ -56,6 +56,11 @@ public class LoginPage extends PageObject {
         clickOn(registerButton);
     }
 
+    public void registerWithInvalidCredentials (String email, String password){
+        typeInto(registerEmailField, email);
+        typeInto(registerPasswordField, password);
+    }
+
 
 }
 

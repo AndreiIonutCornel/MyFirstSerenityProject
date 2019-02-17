@@ -41,6 +41,16 @@ public class RegisterSteps extends ScenarioSteps {
         Assert.assertTrue(myAccountPage.checkRegister());
     }
 
+    @Step
+    public void registerWithInvalidCredentials(){
+        loginPage.registerWithInvalidCredentials("!#$%^^&**@gmail.com", "Mamaaremere#");
+    }
+
+    @Step
+    public void checkRgisterWithIvalid(){
+        Assert.assertTrue(myAccountPage.checkRegisterWithInvalid());
+    }
+
     @StepGroup
     public void validRegister(){
         navigateToHomepage();
@@ -48,6 +58,15 @@ public class RegisterSteps extends ScenarioSteps {
         registerWithValidCredentials();
         clickOnRegisterButton();
         checkRegister();
+    }
+
+    @StepGroup
+    public void invalidRegister(){
+        navigateToHomepage();
+        goToLogin();
+        registerWithInvalidCredentials();
+        clickOnRegisterButton();
+        checkRgisterWithIvalid();
     }
 
 }

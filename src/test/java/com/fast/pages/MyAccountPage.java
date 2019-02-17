@@ -26,4 +26,8 @@ public class MyAccountPage extends PageObject {
         waitFor(registerErrorMessage);
         return registerErrorMessage.containsText("Error: An account is already registered with your email address. Please log in.");
     }
+    public boolean checkRegisterWithInvalid(){
+        waitFor(registerErrorMessage);
+        return registerErrorMessage.containsText("Error: Error: Couldn’t register you… please contact us if you continue to have problems.");
+    }
 }

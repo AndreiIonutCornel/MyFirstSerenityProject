@@ -24,7 +24,7 @@ public class LoginSteps extends ScenarioSteps {
     @Step
     public void goToLogin() {
         homePage.clickMyAccountButton();
-        homePage.clickLoginLink();
+
     }
 
     @Step

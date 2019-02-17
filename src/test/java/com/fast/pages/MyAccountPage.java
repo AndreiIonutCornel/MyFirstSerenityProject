@@ -12,9 +12,18 @@ public class MyAccountPage extends PageObject {
     @FindBy(css = "#post-7 > div > div > div > p:nth-child(1) > strong:nth-child(1)")
     private WebElementFacade welcomeMessageStrong;
 
+    @FindBy(css = "#post-7 > div > div > ul > li")
+    private WebElementFacade registerErrorMessage;
+
+
 
     public boolean checkLoggedIn() {
         waitFor(welcomeMessageStrong);
         return welcomeMessageStrong.containsText("spyroboss");
+    }
+
+    public boolean checkRegister(){
+        waitFor(registerErrorMessage);
+        return registerErrorMessage.containsText("Error: An account is already registered with your email address. Please log in.");
     }
 }

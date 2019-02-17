@@ -20,6 +20,15 @@ public class LoginPage extends PageObject {
     @FindBy(css = "#post-7 > div > div > ul > li")
     private WebElementFacade loginErrorMessage;
 
+    @FindBy(id ="reg_email")
+    private WebElementFacade registerEmailField;
+
+    @FindBy (id ="reg_password")
+    private WebElementFacade registerPasswordField;
+
+    @FindBy (css = "#customer_login > div.u-column2.col-2 > form > p.woocommerce-FormRow.form-row > button")
+    private WebElementFacade registerButton;
+
 
     public void loghinWithTrueCredentials(String email, String password) {
         typeInto(emailField, email);
@@ -37,6 +46,16 @@ public class LoginPage extends PageObject {
         waitFor (loginErrorMessage);
         return loginErrorMessage.containsText(error);
     }
+
+    public void registerWithValidCredentials (String email, String password){
+        typeInto(registerEmailField, email);
+        typeInto(registerPasswordField, password);
+
+    }
+    public void clickOnRegisterButton(){
+        clickOn(registerButton);
+    }
+
 
 }
 

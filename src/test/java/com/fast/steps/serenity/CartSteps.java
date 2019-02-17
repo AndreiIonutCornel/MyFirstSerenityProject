@@ -1,5 +1,6 @@
 package com.fast.steps.serenity;
 
+import com.fast.Utils.Constants;
 import com.fast.pages.*;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
@@ -16,6 +17,37 @@ public class CartSteps extends ScenarioSteps {
     CartPage cartPage;
 
     @Step
+    public void navigateToHomepage() {
+        homePage.open();
+    }
+
+    @Step
+    public void goToLogin() {
+        homePage.clickMyAccountButton();
+
+    }
+
+    @Step
+    public void loghinWithTrueCredentials() {
+        loginPage.loghinWithTrueCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
+
+    }
+    @Step
+    public void clickOnLoginButton() {
+        loginPage.clickLoginButton();
+    }
+
+    @Step
+    public void openShopPage(){
+        homePage.clickShopPage();
+    }
+
+    @Step
+    public void openProductAlbumPage(){
+        shopPage.clickOnAlbumProduct();
+    }
+
+    @Step
     public void clickOnReviewsButton(){
         cartPage.clickOnReviewsButton();
 
@@ -23,7 +55,7 @@ public class CartSteps extends ScenarioSteps {
 
     @Step
     public void typeIntoReviewsField(){
-        cartPage.typeIntoReviewsField("Excelent");
+        cartPage.typeIntoReviewsField("Foarte Misto este");
     }
 
     @Step
@@ -36,10 +68,16 @@ public class CartSteps extends ScenarioSteps {
     }
     @Step
     public void checkReviewText(){
-      Assert.assertTrue(cartPage.checkReviewText("Excelent"));
+      Assert.assertTrue(cartPage.containsText("Foarte Misto este"));
     }
     @StepGroup
     public void checkProductReviews(){
+        navigateToHomepage();
+        goToLogin();
+        loghinWithTrueCredentials();
+        clickOnLoginButton();
+        openShopPage();
+        openProductAlbumPage();
         clickOnReviewsButton();
         typeIntoReviewsField();
         clickOnOneStarReview();

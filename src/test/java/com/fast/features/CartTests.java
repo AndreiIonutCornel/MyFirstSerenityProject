@@ -28,6 +28,8 @@ public class CartTests {
 
     @Test
     public void checkReviewFeature(){
+        cartSteps.checkProductReviews();
+
 
 
 

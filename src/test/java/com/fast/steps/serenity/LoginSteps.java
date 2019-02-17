@@ -17,37 +17,37 @@ public class LoginSteps extends ScenarioSteps {
     MyAccountPage myAccountPage;
 
     @Step
-    public void navigateToHomepage(){
+    public void navigateToHomepage() {
         homePage.open();
     }
 
     @Step
-    public void goToLogin(){
+    public void goToLogin() {
         homePage.clickMyAccountButton();
         homePage.clickLoginLink();
     }
 
     @Step
-    public void loghinWithTrueCredentials(){
+    public void loghinWithTrueCredentials() {
         loginPage.loghinWithTrueCredentials(Constants.USER_EMAIL, Constants.USER_PASS);
     }
 
     @Step
-    public void clickOnLoginButton(){
+    public void clickOnLoginButton() {
         loginPage.clickLoginButton();
     }
 
-  //  @Step
-  //  public void checkLoggedIn(){
- //       Assert.assertTrue(myAccountPage.checkLoggedIn());
-   // }
+    @Step
+    public void checkLoggedIn() {
+        Assert.assertTrue(myAccountPage.checkLoggedIn());
+    }
 
     @StepGroup
-    public void login(){
+    public void login() {
         navigateToHomepage();
         goToLogin();
-
+        loghinWithTrueCredentials();
         clickOnLoginButton();
-   //     checkLoggedIn();
+        checkLoggedIn();
     }
 }

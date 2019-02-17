@@ -17,12 +17,12 @@ public class LoginPage extends PageObject {
     @FindBy(css = "div  p:nth-child(3) button[value= 'Login']")
     private WebElementFacade loginButton;
 
-    public void loghinWithTrueCredentials (String email, String password){
+    public void loghinWithTrueCredentials(String email, String password) {
         typeInto(emailField, email);
         typeInto(passwordField, password);
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         clickOn(loginButton);
     }
 }

@@ -18,12 +18,17 @@ public class LoginTests {
     LoginSteps loginSteps;
 
     @Test
-    public void validLoginTest(){
-       loginSteps.navigateToHomepage();
-       loginSteps.goToLogin();
-       loginSteps.loghinWithTrueCredentials();
-       loginSteps.clickOnLoginButton();
-//       loginSteps.checkLoggedIn();
+    public void validLoginTest() {
+        loginSteps.navigateToHomepage();
+        loginSteps.goToLogin();
+        loginSteps.loghinWithTrueCredentials();
+        loginSteps.clickOnLoginButton();
+        loginSteps.checkLoggedIn();
+    }
+
+    @Test
+    public void invalidLoghinTest() {
+
     }
 
 

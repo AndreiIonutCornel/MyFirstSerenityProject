@@ -16,12 +16,12 @@ public class HomePage extends PageObject {
     @FindBy(css = "#customer_login > div.u-column1.col-1 > form > p:nth-child(3) > button")
     private WebElementFacade logInLink;
 
-    public void clickMyAccountButton(){
+    public void clickMyAccountButton() {
         withTimeoutOf(15, TimeUnit.SECONDS).waitFor(myAccountButton);
         clickOn(myAccountButton);
     }
 
-    public void clickLoginLink(){
+    public void clickLoginLink() {
         clickOn(logInLink);
     }
 

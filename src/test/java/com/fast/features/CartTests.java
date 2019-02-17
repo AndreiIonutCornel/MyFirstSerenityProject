@@ -2,9 +2,12 @@ package com.fast.features;
 
 import com.fast.steps.serenity.CartSteps;
 import com.fast.steps.serenity.LoginSteps;
+import com.fast.steps.serenity.ShopSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -15,13 +18,22 @@ public class CartTests {
     private WebDriver driver;
 
     @Steps
-    LoginSteps loginSteps;
-
-    @Steps
     CartSteps cartSteps;
+    ShopSteps shopSteps;
+    LoginSteps loginSteps;
+    @Before
+    public void maximizePage() {
+        driver.manage().window().maximize();
+    }
 
-    public void addToCart() {
-        loginSteps.login();
+    @Test
+    public void checkReviewFeature(){
+
+
 
     }
+
+
+
+
 }

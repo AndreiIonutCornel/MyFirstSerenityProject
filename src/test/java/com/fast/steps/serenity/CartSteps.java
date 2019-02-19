@@ -55,7 +55,7 @@ public class CartSteps extends ScenarioSteps {
 
     @Step
     public void typeIntoReviewsField(){
-        cartPage.typeIntoReviewsField("Foarte Misto este");
+        cartPage.typeIntoReviewsField("Foarte Misto este produsul dumneavoastra");
     }
 
     @Step
@@ -68,7 +68,7 @@ public class CartSteps extends ScenarioSteps {
     }
     @Step
     public void checkReviewText(){
-      Assert.assertTrue(cartPage.containsText("Foarte Misto este"));
+      Assert.assertTrue(cartPage.containsText("Foarte Misto este produsul dumneavoastra"));
     }
     @StepGroup
     public void checkProductReviews(){

@@ -26,12 +26,20 @@ public class LoginTests {
 
     @Test
     public void validLoginTest() {
-        loginSteps.login();
+        loginSteps.navigateToHomepage();
+        loginSteps.goToLogin();
+        loginSteps.loghinWithTrueCredentials();
+        loginSteps.clickOnLoginButton();
+        loginSteps.checkLoggedIn();
     }
 
     @Test
     public void invalidLoghinTest() {
-        loginSteps.invalidLogin();
+        loginSteps.navigateToHomepage();
+        loginSteps.goToLogin();
+        loginSteps.loginWithFalseCredentials();
+        loginSteps.clickOnLoginButton();
+        loginSteps.checkLoginFailure();
 
     }
 

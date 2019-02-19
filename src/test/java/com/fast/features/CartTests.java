@@ -27,8 +27,8 @@ public class CartTests {
     }
 
     @Test
-    public void checkReviewFeature(){
-        cartSteps.checkProductReviews();
+    public void productReviews(){
+       cartSteps.checkProductReviews();
 
 
 

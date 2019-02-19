@@ -25,11 +25,19 @@ public class RegisterTests {
 
     @Test
     public void validRegister() {
-        registerSteps.validRegister();
+        registerSteps.navigateToHomepage();
+        registerSteps.goToLogin();
+        registerSteps.registerWithValidCredentials();
+        registerSteps.clickOnRegisterButton();
+        registerSteps.checkRegister();
     }
 
     @Test
     public void invalidRegister() {
-        registerSteps.invalidRegister();
+        registerSteps.navigateToHomepage();
+        registerSteps.goToLogin();
+        registerSteps.registerWithInvalidCredentials();
+        registerSteps.clickOnRegisterButton();
+        registerSteps.checkRgisterWithIvalid();
     }
 }
